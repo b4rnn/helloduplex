@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ThreeFragment">
+    <!--FrameLayout
+        android:id="@+id/card_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:orientation="vertical"-->
+
+    <LinearLayout
+        android:id="@+id/card_frame"
+        android:layout_marginTop="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_sitcom"
+            tools:context=".ThreeFragment" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/more_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/background"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/tap_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.data.quetu.PulsatorLayout
+                android:id="@+id/pulsator"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:pulse_color="@color/colorAccent"
+                app:pulse_count="3"
+                app:pulse_duration="4000"
+                app:pulse_interpolator="Decelerate"
+                app:pulse_repeat="0"
+                app:pulse_text=""
+                app:pulse_startFromScratch="false">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/post"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/monkey"
+                    app:civ_border_color="@color/colorLightpurple"
+                    app:civ_border_width="1dp" />
+
+
+                <TextView
+                    android:id="@+id/QwenuText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pulsator"
+                    android:gravity="center"
+                    android:background="@color/colorPrimaryDark"
+                    android:layout_weight="1"
+                    android:padding="12dip"
+                    android:visibility="gone"
+                    android:layout_marginTop="0dp"
+                    android:text="FINDING NEXT VIDEO .. "
+                    android:textColor="#ffffffff" />
+                <TextView
+                    android:id="@+id/PingText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pulsator"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:background="@color/colorPrimaryDark"
+                    android:layout_weight="1"
+                    android:padding="12dip"
+                    android:layout_marginTop="0dp"
+                    android:text="NO WIFI OR MOBILE DATA CONNECTION "
+                    android:textColor="#ffffffff" />
+
+            </com.data.quetu.PulsatorLayout>
+
+        </RelativeLayout>
+    </FrameLayout>
+
+</RelativeLayout>

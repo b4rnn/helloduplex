@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center_vertical"
+    android:layout_marginBottom="10dp"
+    android:layout_marginLeft="0dp"
+    android:layout_marginRight="0dp"
+    android:layout_marginTop="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="-8dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:gravity="center"
+        app:resize_mode="fill"
+        android:background="#00000000"
+        android:id="@+id/videoFrame"
+        >
+
+        <ImageView
+            android:id="@+id/exo_backgroud"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/demo" />
+        <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+            android:id="@+id/cardImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            app:use_controller="true"
+            app:repeat_toggle_modes="all"
+            app:resize_mode="fill"
+            app:show_buffering="when_playing"
+            app:show_shuffle_button="false"
+            app:keep_content_on_player_reset="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:surface_type="texture_view"
+            app:controller_layout_id="@layout/custom_controls"
+
+            />
+        <ImageView
+            android:padding="5dp"
+            android:id="@+id/like_dislike_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:background="@drawable/heart"
+            android:layout_marginBottom="-85dp"
+            android:layout_marginLeft="-90dp"
+            />
+
+        <ImageView
+
+            android:paddingRight="5dp"
+            android:id="@+id/shareButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_share_black_24dp"
+            android:layout_marginBottom="-85dp"
+            android:gravity="bottom"
+            android:layout_marginLeft="-58dp"
+            />
+
+        <ImageView
+            android:id="@+id/exo_fullscreen_icon"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:gravity="bottom"
+            android:adjustViewBounds="true"
+            android:layout_marginBottom="-85dp"
+            android:layout_marginLeft="58dp"
+            android:src="@drawable/ic_fullscreen_open"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <View
+        android:id="@+id/item_swipe_left_indicator"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:alpha="0"
+        android:layout_gravity="left"
+        android:background="@drawable/like" />
+
+    <View
+        android:id="@+id/item_swipe_right_indicator"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="right"
+        android:alpha="0"
+
+        android:background="@drawable/nope" />
+    <TextView
+        android:id="@+id/bookText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:padding="10dp"
+        android:textColor="#787878"
+        android:textSize="21sp"
+        android:layout_marginTop="200dp"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/TabStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"/>
+
+
+</RelativeLayout>
